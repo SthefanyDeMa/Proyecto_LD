@@ -67,7 +67,7 @@
                     <div class="col-lg-5" data-aos="fade-right" data-aos-duration="1200">
                         <div class="intro-excerpt">
                             <h1 style="color: #252850;">Te ayudamos a impulsar tu negocio con Soluciones TI</h1>
-                            <p class="mb-4" style="color: #252850;">
+                            <p class="text-justify mb-4" style="color: #252850;">
                                 En LlamaDevs, transformamos tus ideas en soluciones tecnológicas que
                                 automatizan procesos, optimizan recursos y mejoran la eficiencia de tu negocio. Nos especializamos en implementar
                                 sistemas personalizados y modulares para satisfacer las necesidades específicas de cada empresa.
@@ -147,8 +147,8 @@
 
                             <!-- Div de la imagen alineada a la derecha y centrada -->
                             <div class="col-lg-6 d-flex justify-content-center align-items-center">
-                                <img src="images/minimarket.jpg" class="img-fluid w-80" alt="Sistema para Minimarket"
-                                    style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 224, 255, 0.5);">
+                                <img src="images/minimarket.jpg" class="img-fluid responsive-img" alt="Sistema para Minimarket"
+                                    style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 224, 255, 0.5); max-width: 500px; height: auto;">
                             </div>
                         </div>
                     </div>
@@ -161,8 +161,8 @@
                         <div class="d-flex justify-content-center align-items-center w-100">
                             <!-- Div de la imagen alineada a la izquierda y centrada -->
                             <div class="col-lg-6 d-flex justify-content-center align-items-center">
-                                <img src="images/hotel.jpg" class="img-fluid w-80" alt="Sistema para Hoteles"
-                                    style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 224, 255, 0.5);">
+                                <img src="images/hotel.jpg" class="img-fluid responsive-img" alt="Sistema para Hoteles"
+                                    style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 224, 255, 0.5); max-width: 500px; height: auto;">
                             </div>
 
                             <!-- Div del texto alineado a la derecha y centrado con efectos cibernéticos -->
