@@ -124,67 +124,55 @@
                 <!-- Carousel Item 1 - Sistema para Minimarket -->
                 <div class="carousel-item" style="transition: transform 1s ease-in-out, opacity 1s ease-in-out;">
                     <div class="row" style="height: 100%;">
-                        <!-- Contenedor principal del contenido -->
-                        <div class="d-flex justify-content-center align-items-center w-80">
-                            <!-- Div del texto alineado a la izquierda y centrado con efectos cibernéticos -->
-                            <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center text-center"
-                                style="border: 2px solid #00e0ff; border-radius: 10px; padding: 20px; margin: 15px; transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; cursor: pointer; background: rgba(26, 26, 46, 0.8);"
-                                onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 10px 20px rgba(0, 224, 255, 0.5)';"
-                                onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 8px rgba(0, 0, 0, 0.1)';">
-                                <h3 class="mb-3" style="color: #00e0ff; font-style: inherit;">Sistema para Minimarket</h3>
-                                <div class="text-justify mb-2">
-                                    <p style="color: #b3b3b3;">
-                                        Optimiza la gestión de tu minimarket con nuestro sistema especializado. Controla
+                        <!-- Columna de texto -->
+                        <div class="col-md-6 col-12 justify-content-center align-items-center text-center" >
+                        <h3 class="mb-3" style="color: #00e0ff; font-style: inherit;">Sistema para Minimarket</h3>
+                                <p style="color: #b3b3b3;">
+                                    Optimiza la gestión de tu minimarket con nuestro sistema especializado. Controla
                                         inventarios, realiza ventas y administra tus productos de manera eficiente.
                                         Automatiza procesos para ahorrar tiempo y maximizar ganancias. Nuestro sistema incluye
                                         módulos de gestión de inventario, ventas, reportes y facturación.
-                                    </p>
-                                </div>
-                                <p><a href="minimarket.html" class="btn btn-primary mt-3" style="background-color: #00e0ff; border-radius: 20px; padding: 10px 20px; transition: transform 0.3s; color: #1a1a2e; font-weight: bold;"
-                                        onmouseover="this.style.transform='scale(1.1)'; this.style.backgroundColor='#00b2cc';"
-                                        onmouseout="this.style.transform='scale(1)'; this.style.backgroundColor='#00e0ff';">Ver Detalles</a></p>
-                            </div>
-
-                            <!-- Div de la imagen alineada a la derecha y centrada -->
-                            <div class="col-lg-6 d-flex justify-content-center align-items-center">
-                                <img src="images/minimarket.jpg" class="img-fluid responsive-img" alt="Sistema para Minimarket"
-                                    style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 224, 255, 0.5); max-width: 500px; height: auto;">
-                            </div>
+                            </p>
                         </div>
+                        <!-- Columna de imagen -->
+                        <div class="col-md-6 col-12">
+                            <img src="{{ asset('images/minimarket.jpg') }}" alt="Hotel" class="img-fluid">
+                        </div>
+                        <div class="justify-content-center align-items-center text-center">
+                        <p><a href="minimarket.html" class="btn btn-primary mt-3" style="background-color: #00e0ff; border-radius: 20px; padding: 10px 20px; transition: transform 0.3s; color: #1a1a2e; font-weight: bold;"
+                            onmouseover="this.style.transform='scale(1.1)'; this.style.backgroundColor='#00b2cc';"
+                            onmouseout="this.style.transform='scale(1)'; this.style.backgroundColor='#00e0ff';">Ver Detalles</a></p>
+                        </div>
+                        
                     </div>
+
+                    
                 </div>
 
                 <!-- Carousel Item 2 - Sistema para Hoteles -->
                 <div class="carousel-item active" style="transition: transform 1s ease-in-out, opacity 1s ease-in-out;">
                     <div class="row" style="height: 100%;">
-                        <!-- Contenedor principal del contenido -->
-                        <div class="d-flex justify-content-center align-items-center w-100">
-                            <!-- Div de la imagen alineada a la izquierda y centrada -->
-                            <div class="col-lg-6 d-flex justify-content-center align-items-center">
-                                <img src="images/hotel.jpg" class="img-fluid responsive-img" alt="Sistema para Hoteles"
-                                    style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 224, 255, 0.5); max-width: 500px; height: auto;">
-                            </div>
-
-                            <!-- Div del texto alineado a la derecha y centrado con efectos cibernéticos -->
-                            <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center text-center"
-                                style="border: 2px solid #00e0ff; border-radius: 10px; padding: 20px; margin: 15px; transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; cursor: pointer; background: rgba(26, 26, 46, 0.8);"
-                                onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 10px 20px rgba(0, 224, 255, 0.5)';"
-                                onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 8px rgba(0, 0, 0, 0.1)';">
-                                <h3 class="mb-3" style="color: #00e0ff; font-style: inherit;">Sistema para Hoteles</h3>
-                                <div class="text-justify mb-2">
-                                    <p style="color: #b3b3b3;">
-                                        Mejora la experiencia de tus huéspedes con un sistema integral para hoteles. Gestiona
-                                        reservas, check-ins, check-outs y servicios adicionales desde una plataforma fácil de
-                                        usar. Nuestro sistema para hoteles incluye módulos para la gestión de reservas,
-                                        servicios de habitaciones, facturación, y estadísticas detalladas sobre ocupación y
-                                        rendimiento.
-                                    </p>
-                                </div>
-                                <p><a href="hotel.html" class="btn btn-primary mt-3" style="background-color: #00e0ff; border-radius: 20px; padding: 10px 20px; transition: transform 0.3s; color: #1a1a2e; font-weight: bold;"
-                                        onmouseover="this.style.transform='scale(1.1)'; this.style.backgroundColor='#00b2cc';"
-                                        onmouseout="this.style.transform='scale(1)'; this.style.backgroundColor='#00e0ff';">Ver Detalles</a></p>
-                            </div>
+                        <!-- Columna de texto -->
+                        <div class="col-md-6 col-12 justify-content-center align-items-center text-center" >
+                        <h3 class="mb-3" style="color: #00e0ff; font-style: inherit;">Sistema para Hoteles</h3>
+                                <p style="color: #b3b3b3;">
+                                    Mejora la experiencia de tus huéspedes con un sistema integral para hoteles. Gestiona
+                                    reservas, check-ins, check-outs y servicios adicionales desde una plataforma fácil de
+                                    usar. Nuestro sistema para hoteles incluye módulos para la gestión de reservas,
+                                    servicios de habitaciones, facturación, y estadísticas detalladas sobre ocupación y
+                                    rendimiento.
+                            </p>
                         </div>
+                        <!-- Columna de imagen -->
+                        <div class="col-md-6 col-12">
+                            <img src="{{ asset('images/hotel.jpg') }}" alt="Hotel" class="img-fluid">
+                        </div>
+                        <div class="justify-content-center align-items-center text-center">
+                        <p><a href="hotel.html" class="btn btn-primary mt-3" style="background-color: #00e0ff; border-radius: 20px; padding: 10px 20px; transition: transform 0.3s; color: #1a1a2e; font-weight: bold;"
+                            onmouseover="this.style.transform='scale(1.1)'; this.style.backgroundColor='#00b2cc';"
+                            onmouseout="this.style.transform='scale(1)'; this.style.backgroundColor='#00e0ff';">Ver Detalles</a></p>
+                        </div>
+                        
                     </div>
                 </div>
 
