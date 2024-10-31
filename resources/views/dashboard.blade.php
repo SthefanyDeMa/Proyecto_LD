@@ -7,8 +7,27 @@
         <meta name="author" content="Untree.co">
         <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
 
-        <meta name="description" content="" />
-        <meta name="keywords" content="bootstrap, bootstrap4" />
+        <!-- Título relevante para el sitio -->
+        <title>Soluciones TI Personalizadas | LlamaDevs</title>
+
+        <!-- Descripción clara del propósito del sitio -->
+        <meta name="description" content="LlamaDevs ofrece soluciones tecnológicas personalizadas para impulsar y optimizar tu negocio. Contamos con sistemas para hoteles, minimarkets y más.">
+        <meta name="keywords" content="soluciones tecnológicas, sistemas para hoteles, sistemas para minimarkets, LlamaDevs, TI, software personalizado, automatización de procesos">
+
+        <!-- Open Graph para compartir en redes sociales -->
+        <meta property="og:title" content="Soluciones TI Personalizadas | LlamaDevs">
+        <meta property="og:description" content="En LlamaDevs, te ayudamos a transformar tus ideas en soluciones tecnológicas que optimizan y mejoran la eficiencia de tu negocio.">
+        <meta property="og:image" content="{{ asset('images/llamadevs2_logo.png') }}">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://llamadevs.com">
+
+        <!-- Twitter Card para compartir en Twitter -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Soluciones TI Personalizadas | LlamaDevs">
+        <meta name="twitter:description" content="LlamaDevs ofrece soluciones tecnológicas personalizadas para impulsar y optimizar tu negocio.">
+        <meta name="twitter:image" content="{{ asset('images/llamadevs2_logo.png') }}">
+
+        <!-- Vinculación de la hoja de estilos y scripts -->
         <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
@@ -17,11 +36,10 @@
         <link href="{{ asset('css/tiny-slider.css') }}" rel="stylesheet">
         <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
-        <title>LlamaDevs</title>
-  <!-- Incluye la hoja de estilo de Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+        <!-- Incluye la hoja de estilo de Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     </head>
+
 
     <body>
 
@@ -29,7 +47,7 @@
         <nav class="custom-navbar navbar navbar-expand-md navbar-dark py-3" style="background-color: #252850 !important;" aria-label="Furni navigation bar">
             <div class="container">
                 <img src="images/llamadevs2_logo.png" alt="Logo" style="width: 150px; height: 150px; margin-right: 2px;">
-                <a class="navbar-brand text-white" href="index.html" >LlamaDevs<span>.</span></a>
+                <a class="navbar-brand text-white" href="" >LlamaDevs<span>.</span></a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni"
                     aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,16 +57,19 @@
                 <div class="collapse navbar-collapse" id="navbarsFurni">
                     <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
                         <li class="nav-item active">
-                            <a class="nav-link text-white hover:text-gray-300" href="index.html" style="font-size: 16px;">Principal</a>
+                            <a class="nav-link text-white hover:text-gray-300" href="" style="font-size: 16px;">Principal</a>
                         </li>
-                        <li><a class="nav-link text-white hover:text-gray-300" href="shop.html" style="font-size: 16px;">Sistemas</a></li>
-                        <li><a class="nav-link text-white hover:text-gray-300" href="about.html" style="font-size: 16px;">Acerca de Nosotros</a></li>
-                        <li><a class="nav-link text-white hover:text-gray-300" href="services.html" style="font-size: 16px;">Servicios</a></li>
-                        <li><a class="nav-link text-white hover:text-gray-300" href="contact.html" style="font-size: 16px;">Contáctanos</a></li>
+                        <li><a class="nav-link text-white hover:text-gray-300" href="" style="font-size: 16px;">Sistemas</a></li>
+                        <li><a class="nav-link text-white hover:text-gray-300" href="" style="font-size: 16px;">Acerca de Nosotros</a></li>
+                        <li><a class="nav-link text-white hover:text-gray-300" href="{{ route('planes.index') }}" style="font-size: 16px;">Planes</a></li>
+                        <li><a class="nav-link text-white hover:text-gray-300" href="" style="font-size: 16px;">Contáctanos</a></li>
                         <li>
+                            <a href="https://demo.llamadevs.com/login">
                             <button class="btn px-4 py-2 rounded-pill" style="background-color: #00e0ff; border-radius: 20px; padding: 10px 20px; transition: transform 0.3s; color: #1a1a2e; font-weight: bold; font-size: 16px;"
                                     onmouseover="this.style.transform='scale(1.1)'; this.style.backgroundColor='#00b2cc';"
                                     onmouseout="this.style.transform='scale(1)'; this.style.backgroundColor='#00e0ff';">Prueba gratis</button>
+
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -82,7 +103,8 @@
                     <!-- Imagen del Hero -->
                     <div class="col-lg-7" data-aos="fade-left" data-aos-duration="1200" style="padding-top: 100px">
                         <div class="hero-img-wrap">
-                            <img src="images/imgprincipal3.png" class="img-fluid responsive-img" style="width: 100%; max-width: 1000px; height: auto;">
+                            <!-- Lazy loading en imágenes -->
+                            <img src="images/imgprincipal3.png" class="img-fluid responsive-img" alt="Soluciones TI Personalizadas" loading="lazy" style="width: 100%; max-width: 1000px; height: auto;">
                         </div>
                     </div>
                 </div>
@@ -111,12 +133,12 @@
 <br>
             <!-- Indicadores del carrusel -->
             <div class="carousel-indicators">
-                <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="0" class="active" 
+                <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="0" class="active"
                     aria-current="true" aria-label="Slide 1"
                     style="background-color: #00e0ff; width: 12px; height: 12px; border-radius: 50%; border: none;"></button>
                 <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="1"  aria-label="Slide 2"
                     style="background-color: #00e0ff; width: 12px; height: 12px; border-radius: 50%; border: none;"></button>
-                
+
             </div>
 
             <div class="carousel-inner">
@@ -141,12 +163,12 @@
                         <div class="justify-content-center align-items-center text-center">
                         <p><a href="minimarket.html" class="btn btn-primary mt-3" style="background-color: #00e0ff; border-radius: 20px; padding: 10px 20px; transition: transform 0.3s; color: #1a1a2e; font-weight: bold;"
                             onmouseover="this.style.transform='scale(1.1)'; this.style.backgroundColor='#00b2cc';"
-                            onmouseout="this.style.transform='scale(1)'; this.style.backgroundColor='#00e0ff';">Ver Detalles</a></p>
+                            onmouseout="this.style.transform='scale(1)'; this.style.backgroundColor='#00e0ff';">Ver Planes</a></p>
                         </div>
-                        
+
                     </div>
 
-                    
+
                 </div>
 
                 <!-- Carousel Item 2 - Sistema para Hoteles -->
@@ -168,15 +190,16 @@
                             <img src="{{ asset('images/hotel.jpg') }}" alt="Hotel" class="img-fluid">
                         </div>
                         <div class="justify-content-center align-items-center text-center">
-                        <p><a href="hotel.html" class="btn btn-primary mt-3" style="background-color: #00e0ff; border-radius: 20px; padding: 10px 20px; transition: transform 0.3s; color: #1a1a2e; font-weight: bold;"
-                            onmouseover="this.style.transform='scale(1.1)'; this.style.backgroundColor='#00b2cc';"
-                            onmouseout="this.style.transform='scale(1)'; this.style.backgroundColor='#00e0ff';">Ver Detalles</a></p>
+                        <p><a href="{{ route('planes.index') }}" class="btn btn-primary mt-3" style="background-color: #00e0ff; border-radius: 20px; padding: 10px 20px; transition: transform 0.3s; color: #1a1a2e; font-weight: bold;"
+                        onmouseover="this.style.transform='scale(1.1)'; this.style.backgroundColor='#00b2cc';"
+                        onmouseout="this.style.transform='scale(1)'; this.style.backgroundColor='#00e0ff';">Ver Planes</a>
+                        </p>
                         </div>
-                        
+
                     </div>
                 </div>
 
-                
+
 
             </div>
 
@@ -265,7 +288,7 @@
 
 
 
-    
+
     <!-- End Why Choose Us Section -->
 
     <style>
@@ -340,9 +363,9 @@
                 </div>
                 <br>
                 <p>
-                <button id="toggleButton" class="btn" style="background-color: #252850; color: white; border: none; border-radius: 20px; padding: 10px 20px; display: flex; align-items: center; gap: 10px; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);" 
-        onmouseover="this.style.backgroundColor='#4a4fb1'" 
-        onmouseout="this.style.backgroundColor='#252850'" 
+                <button id="toggleButton" class="btn" style="background-color: #252850; color: white; border: none; border-radius: 20px; padding: 10px 20px; display: flex; align-items: center; gap: 10px; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);"
+        onmouseover="this.style.backgroundColor='#4a4fb1'"
+        onmouseout="this.style.backgroundColor='#252850'"
         onclick="toggleContent()">
     <span id="buttonText">Ver Visión</span>
     <span class="arrow" style="display: inline-block; transition: transform 0.3s, color 0.3s; font-weight: bold; font-size: 18px; color: white;">
@@ -511,7 +534,7 @@
 <!-- End Corporate Values Section -->
 
 
-    
+
 
     <script>
         // Animations for section entry and hover effects
@@ -555,12 +578,12 @@
         }
     </style>
 
-    
+
 <!-- Start Our Services Section -->
 <div class="our-services-section" style="background: #f8f9fa; padding: 60px 0;">
     <div class="container">
         <h2 class="section-title text-center mb-5" style="color: #252850; font-weight: bold; font-size: 36px;">Nuestros Servicios</h2>
-        
+
         <div class="row justify-content-center">
             <!-- Servicio 1 -->
             <div class="col-lg-4 mb-4">
