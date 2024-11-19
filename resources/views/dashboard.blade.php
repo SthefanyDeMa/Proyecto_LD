@@ -38,6 +38,155 @@
 
         <!-- Incluye la hoja de estilo de Font Awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+        <!-- Arreglo para la barra blanca lateral -->
+        <style>
+            /* Reset básico para eliminar márgenes y padding innecesarios */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            /* Prevenir desbordamiento horizontal */
+            body {
+                overflow-x: hidden;
+                width: 100%;
+                position: relative;
+            }
+
+            /* Mejoras en la responsividad */
+            .container {
+                padding-right: 15px;
+                padding-left: 15px;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            /* Mejoras en el diseño del navbar */
+            .custom-navbar {
+                padding: 0.5rem 1rem;
+            }
+
+            .navbar-brand img {
+                max-width: 120px;
+                height: auto;
+            }
+
+            /* Mejoras en las cards de servicios */
+            .service-card {
+                height: 100%;
+                transition: transform 0.3s ease;
+                margin-bottom: 20px;
+            }
+
+            /* Mejoras en la sección hero */
+            .hero {
+                padding: 60px 0;
+            }
+
+            .hero-img-wrap img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            /* Mejoras en el carrusel */
+            .carousel-item {
+                padding: 20px;
+            }
+
+            .carousel-item img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 10px;
+            }
+
+            /* Mejoras en la sección de valores */
+            .card-value {
+                margin-bottom: 20px;
+            }
+
+            /* Media queries para diferentes tamaños de pantalla */
+            @media (max-width: 768px) {
+                .navbar-brand img {
+                    max-width: 100px;
+                }
+
+                .hero {
+                    padding: 30px 0;
+                }
+
+                .hero h1 {
+                    font-size: 1.8rem;
+                }
+
+                .section-title {
+                    font-size: 1.5rem;
+                }
+
+                .carousel-item {
+                    padding: 10px;
+                }
+
+                .feature-card {
+                    margin-bottom: 15px;
+                }
+            }
+
+            @media (max-width: 576px) {
+                .navbar-brand {
+                    font-size: 1.2rem;
+                }
+
+                .hero h1 {
+                    font-size: 1.5rem;
+                }
+
+                .btn {
+                    padding: 8px 16px;
+                    font-size: 14px;
+                }
+            }
+
+            /* Mejoras visuales generales */
+            .btn {
+                border-radius: 25px;
+                transition: all 0.3s ease;
+            }
+
+            .btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+
+            .section-title {
+                position: relative;
+                margin-bottom: 40px;
+            }
+
+            .section-title:after {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 60px;
+                height: 3px;
+                background: #00e0ff;
+            }
+
+            /* Animaciones suaves */
+            .fade-up {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: all 0.6s ease;
+            }
+
+            .fade-up.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        </style>
     </head>
 
 
@@ -754,5 +903,28 @@
             duration: 1000, // Duración de la animación en milisegundos
             easing: 'ease-in-out', // Tipo de animación
             once: true // Animar solo una vez al entrar en la vista
+        });
+    </script>
+
+    <!-- Agregar script para las animaciones -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Observador para elementos con animación
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            // Aplicar observador a elementos con fade-up
+            document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
+
+            // Prevenir desbordamiento en móviles
+            document.documentElement.style.setProperty('overflow-x', 'hidden', 'important');
+            document.body.style.setProperty('overflow-x', 'hidden', 'important');
         });
     </script>

@@ -44,34 +44,174 @@
         <!-- Incluye la hoja de estilo de Font Awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <style>
-            .card {
-                transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            /* Estilos generales */
+            body {
+                background-color: #f8f9ff;
             }
 
-            .card:hover {
+            /* Estilos para la sección de planes */
+            .planes-section {
+                padding: 80px 0;
+                background: linear-gradient(135deg, #f8f9ff 0%, #e9ecef 100%);
+            }
+
+            .section-title {
+                color: #252850;
+                font-size: 2.5rem;
+                font-weight: 700;
+                margin-bottom: 3rem;
+                text-align: center;
+                position: relative;
+            }
+
+            .section-title:after {
+                content: '';
+                position: absolute;
+                bottom: -15px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80px;
+                height: 4px;
+                background: #00b4d8;
+                border-radius: 2px;
+            }
+
+            /* Estilos mejorados para las cards */
+            .plan-card {
+                border: none;
+                border-radius: 20px;
+                overflow: hidden;
+                transition: all 0.3s ease;
+                background: white;
+                height: 100%;
+            }
+
+            .plan-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            .plan-header {
+                background: #252850;
+                color: white;
+                padding: 20px;
+                text-align: center;
+                border-radius: 20px 20px 0 0;
+            }
+
+            .plan-title {
+                font-size: 1.8rem;
+                font-weight: 700;
+                margin: 0;
+                color: white;
+            }
+
+            .plan-price {
+                font-size: 2.5rem;
+                font-weight: 700;
+                color: #00b4d8;
+                margin: 20px 0;
+            }
+
+            .plan-price span {
+                font-size: 1rem;
+                color: #6c757d;
+            }
+
+            .plan-features {
+                padding: 30px;
+                list-style: none;
+            }
+
+            .plan-features li {
+                padding: 10px 0;
+                border-bottom: 1px solid #eee;
+                color: #6c757d;
+            }
+
+            .plan-features li i {
+                color: #00b4d8;
+                margin-right: 10px;
+            }
+
+            /* Estilos para el botón */
+            .btn-plan {
+                background: #00b4d8;
+                color: white;
+                border: none;
+                padding: 12px 30px;
+                border-radius: 50px;
+                font-weight: 600;
+                transition: all 0.3s ease;
+                width: 80%;
+                margin: 20px auto;
+                display: block;
+            }
+
+            .btn-plan:hover {
+                background: #0077b6;
                 transform: scale(1.05);
-                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             }
 
-            .card-title {
-                font-size: 1.5rem;
+            /* Estilos para el modal */
+            .modal-content {
+                border-radius: 20px;
+                border: none;
+            }
+
+            .modal-header {
+                background: #252850;
+                color: white;
+                border-radius: 20px 20px 0 0;
+                padding: 20px;
+            }
+
+            .modal-title {
+                font-weight: 700;
+                color: white;
+            }
+
+            .modal-body {
+                padding: 30px;
+            }
+
+            .modal-body p {
+                margin-bottom: 15px;
+                color: #6c757d;
+            }
+
+            .modal-body strong {
                 color: #252850;
             }
 
-            .card-body {
-                background-color: #f8f9fa;
+            .btn-demo {
+                background: #00b4d8;
+                color: white;
+                padding: 12px 30px;
+                border-radius: 50px;
+                font-weight: 600;
+                transition: all 0.3s ease;
             }
 
-            .btn-primary {
-                background-color: #00b4d8;
-                border: none;
-                transition: background-color 0.3s ease;
+            .btn-demo:hover {
+                background: #0077b6;
+                transform: scale(1.05);
             }
 
-            .btn-primary:hover {
-                background-color: #0077b6;
-            }
+            /* Responsive */
+            @media (max-width: 768px) {
+                .section-title {
+                    font-size: 2rem;
+                }
 
+                .plan-card {
+                    margin-bottom: 30px;
+                }
+
+                .plan-price {
+                    font-size: 2rem;
+                }
+            }
         </style>
     </head>
 
@@ -110,57 +250,78 @@
 
             </div>
         </nav>
-        <div class="container mt-5">
-    <h2 class="text-center mb-4">Nuestros Planes para el Sistema de Gestión Hotelera</h2>
+        <div class="planes-section">
+            <div class="container">
+                <h2 class="section-title">Planes de Gestión Hotelera</h2>
 
-    <div class="row justify-content-center">
-        @foreach($planes as $plan)
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card shadow-sm border-0" style="border-radius: 15px; overflow: hidden;">
-                    <div class="card-body text-center p-4" style="background-color: #f8f9fa;">
-                        <h5 class="card-title" style="font-weight: bold;">{{ $plan->nombre }}</h5>
-                        <p class="card-text mt-3">
-                            <strong>Precio Mensual:</strong> S/ {{ number_format($plan->costo, 2) }}
-                        </p>
-                        <button class="btn btn-primary mt-3 rounded-pill" data-bs-toggle="modal" data-bs-target="#planModal" 
-                                data-plan='{
-                                    "nombre": "{{ $plan->nombre }}",
-                                    "limite_sucursales": "{{ $plan->limite_sucursales == 0 ? 'Ilimitadas' : $plan->limite_sucursales }}",
-                                    "limite_habitaciones": "{{ $plan->limite_habitaciones == 0 ? 'Ilimitadas' : $plan->limite_habitaciones }}",
-                                    "facturacion_sunat": "{{ $plan->facturacion_sunat ? 'Sí' : 'No' }}",
-                                    "gestor_usuarios": "{{ $plan->gestor_usuarios ? 'Sí' : 'No' }}"
-                                }' onclick="mostrarDetallesPlan(this)">
-                            Ver
-                        </button>
+                <div class="row justify-content-center">
+                    @foreach($planes as $plan)
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="plan-card">
+                                <div class="plan-header">
+                                    <h3 class="plan-title">{{ $plan->nombre }}</h3>
+                                    <div class="plan-price">
+                                        S/ {{ number_format($plan->costo, 2) }}
+                                        <span>/mes</span>
+                                    </div>
+                                </div>
+                                <ul class="plan-features">
+                                    <li>
+                                        <i class="fas fa-building"></i>
+                                        {{ $plan->limite_sucursales == 0 ? 'Sucursales ilimitadas' : $plan->limite_sucursales . ' sucursales' }}
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-bed"></i>
+                                        {{ $plan->limite_habitaciones == 0 ? 'Habitaciones ilimitadas' : $plan->limite_habitaciones . ' habitaciones' }}
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-file-invoice"></i>
+                                        {{ $plan->facturacion_sunat ? 'Facturación SUNAT incluida' : 'Sin facturación SUNAT' }}
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-users"></i>
+                                        {{ $plan->gestor_usuarios ? 'Gestor de usuarios incluido' : 'Sin gestor de usuarios' }}
+                                    </li>
+                                </ul>
+                                <button class="btn-plan" data-bs-toggle="modal" data-bs-target="#planModal"
+                                        data-plan='{
+                                            "nombre": "{{ $plan->nombre }}",
+                                            "limite_sucursales": "{{ $plan->limite_sucursales == 0 ? 'Ilimitadas' : $plan->limite_sucursales }}",
+                                            "limite_habitaciones": "{{ $plan->limite_habitaciones == 0 ? 'Ilimitadas' : $plan->limite_habitaciones }}",
+                                            "facturacion_sunat": "{{ $plan->facturacion_sunat ? 'Sí' : 'No' }}",
+                                            "gestor_usuarios": "{{ $plan->gestor_usuarios ? 'Sí' : 'No' }}"
+                                        }' onclick="mostrarDetallesPlan(this)">
+                                    Ver detalles
+                                </button>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal mejorado -->
+        <div class="modal fade" id="planModal" tabindex="-1" aria-labelledby="planModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="planModalLabel">Detalles del Plan</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p><i class="fas fa-building me-2"></i> <strong>Sucursales Permitidas:</strong> <span id="sucursalesPermitidas"></span></p>
+                        <p><i class="fas fa-bed me-2"></i> <strong>Habitaciones Permitidas:</strong> <span id="habitacionesPermitidas"></span></p>
+                        <p><i class="fas fa-file-invoice me-2"></i> <strong>Facturación con SUNAT:</strong> <span id="facturacionSunat"></span></p>
+                        <p><i class="fas fa-users me-2"></i> <strong>Gestor de Usuarios:</strong> <span id="gestorUsuarios"></span></p>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <a href="https://demo.llamadevs.com/login" class="btn btn-demo">
+                            <i class="fas fa-play-circle me-2"></i>Probar Sistema Demo
+                        </a>
                     </div>
                 </div>
             </div>
-        @endforeach
-    </div>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="planModal" tabindex="-1" aria-labelledby="planModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-        <div class="modal-header justify-content-center position-relative">
-            <h5 class="modal-title text-center w-100" id="planModalLabel">Plan</h5>
-            <button type="button" class="btn-close position-absolute end-0 me-3" data-bs-dismiss="modal" aria-label="Cerrar"></button>
         </div>
-
-            <div class="modal-body">
-                <p><strong>Sucursales Permitidas:</strong> <span id="sucursalesPermitidas"></span></p>
-                <p><strong>Habitaciones Permitidas:</strong> <span id="habitacionesPermitidas"></span></p>
-                <p><strong>Facturación con SUNAT:</strong> <span id="facturacionSunat"></span></p>
-                <p><strong>Gestor de Usuarios:</strong> <span id="gestorUsuarios"></span></p>
-            </div>
-            <div class="modal-footer d-flex justify-content-center">
-                <a href="https://demo.llamadevs.com/login" class="btn btn-success btn-lg">Probar Sistema Demo</a>
-            </div>
-
-        </div>
-    </div>
-</div>
 
 
         <footer class="footer-section" style="background: #1e1e2f; color: #ffffff; padding: 50px 0;">
@@ -247,5 +408,5 @@
 </script>
 
     </body>
-    
+
 
