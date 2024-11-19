@@ -123,4 +123,19 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | SEO Configuration
+    |--------------------------------------------------------------------------
+    |
+    | Estas configuraciones se utilizan para los metadatos SEO de la aplicación.
+    | Describen los servicios y la propuesta de valor de LlamaDevs para
+    | mejorar la visibilidad en los motores de búsqueda.
+    |
+    */
+
+    'meta_description' => env('APP_META_DESCRIPTION', 'LlamaDevs: Empresa líder en soluciones tecnológicas personalizadas. Ofrecemos desarrollo de software, aplicaciones web y consultoría IT para impulsar la transformación digital de tu negocio.'),
+
+    'meta_keywords' => env('APP_META_KEYWORDS', 'desarrollo software, soluciones tecnológicas, desarrollo web, consultoría IT, transformación digital, LlamaDevs, desarrollo de aplicaciones, servicios tecnológicos, software empresarial'),
+
 ];
